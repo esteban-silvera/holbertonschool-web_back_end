@@ -4,6 +4,7 @@
 
 import math
 
+
 def floor(n: float) -> int:
     """coment"""
     return math.floor(n)

@@ -4,6 +4,7 @@
 
 from typing import Callable
 
+
 def make_multiplier(multiplier: float) -> Callable[[float], float]:
     """coment"""
     def multiplier_func(x: float) -> float:
