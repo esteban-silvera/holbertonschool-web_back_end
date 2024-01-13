@@ -12,6 +12,7 @@ def index_range(page, page_size):
         end_index = start_index + page_size
         return start_index, end_index
 
+
 class Server:
     """coment class"""
     DATA_FILE = "Popular_Baby_Names.csv"
@@ -28,7 +29,7 @@ class Server:
             self.__dataset = dataset[1:]
 
         return self.__dataset
-    
+
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """coments"""
         assert type(page) == int and page > 0
