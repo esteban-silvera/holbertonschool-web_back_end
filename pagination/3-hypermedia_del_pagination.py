@@ -5,20 +5,13 @@ import math
 from typing import List, Dict, Any
 
 
-def index_range(page, page_size):
-    """comentariu"""
-    if page and page_size:
-        start_index = (page - 1) * page_size
-        end_index = start_index + page_size
-        return start_index, end_index
-
-
 class Server:
     """coment class"""
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
         self.__dataset = None
+        self.__indexed_dataset = None
 
     def dataset(self) -> List[List]:
         """function coment"""
