@@ -30,16 +30,15 @@ class Server:
 
         return self.__dataset
 
-    def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+    def indexed_dataset(self) -> Dict[int, List]:
         """coments"""
-        assert type(page) == int and page > 0
-        assert type(page_size) == int and page_size > 0
-        start, end = index_range(page, page_size)
-        pages = []
-        if start >= len(self.dataset()):
-            return pages
-        pages = self.dataset()
-        return pages[start:end]
+        if self.__indexed_dataset is None:
+            dataset = self.dataset()
+            truncated_dataset = dataset[:1000]
+            self.__indexed_dataset = {
+                i: dataset[i] for i in range(len(dataset))
+            }
+        return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         """ coments"""
